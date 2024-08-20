@@ -1,8 +1,8 @@
 // imports
 importScripts('js/sw-utils.js')
 
-const STATIC_CHACE = 'statis_v2';
-const DYNAMIC_CHACE = 'dynamix_v1';
+const STATIC_CHACE = 'statis_v3';
+const DYNAMIC_CHACE = 'dynamic_v2';
 const INMUTABLE_CHACE = 'inmutable_v1';
 
 const APP_SHELL = [
@@ -42,6 +42,9 @@ self.addEventListener('active', (e) => {
     const responActivate = caches.keys().then( keys => {
         keys.forEach(key => {   
             if(key !== STATIC_CHACE && key.includes('static')){
+                return caches.delete(key)
+            }
+            if(key !== DYNAMIC_CHACE && key.includes('dynamic')){
                 return caches.delete(key)
             }
         });
