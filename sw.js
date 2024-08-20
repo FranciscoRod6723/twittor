@@ -2,7 +2,7 @@
 importScripts('js/sw-utils.js')
 
 const STATIC_CHACE = 'static_v1';
-const DYNAMIC_CHACE = 'dynamic_v2';
+const DYNAMIC_CHACE = 'dynamic_v1';
 const INMUTABLE_CHACE = 'inmutable_v1';
 
 const APP_SHELL = [
@@ -53,7 +53,7 @@ self.addEventListener('active', (e) => {
     e.waitUntil( responActivate )
 })
 
-self.addEventListener('fecth', (e) => {
+self.addEventListener('fetch', (e) => {
 
     const response = caches.match(e.request).then( res => {
 
