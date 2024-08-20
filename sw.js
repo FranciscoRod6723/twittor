@@ -1,7 +1,7 @@
 // imports
 importScripts('js/sw-utils.js')
 
-const STATIC_CHACE = 'statis_v3';
+const STATIC_CHACE = 'static_v1';
 const DYNAMIC_CHACE = 'dynamic_v2';
 const INMUTABLE_CHACE = 'inmutable_v1';
 
